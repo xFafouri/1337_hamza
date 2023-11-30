@@ -6,7 +6,7 @@
 /*   By: hfafouri <hfafouri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 03:03:12 by hfafouri          #+#    #+#             */
-/*   Updated: 2023/11/25 06:53:20 by hfafouri         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:56:02 by hfafouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (*needle == 0 ft_strlen(needle) == NULL)
+	if (*needle == 0)
 		return ((char *)haystack);
 	if (len == 0)
 		return (NULL);

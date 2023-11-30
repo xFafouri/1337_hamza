@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfafouri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 13:26:49 by hfafouri          #+#    #+#             */
-/*   Updated: 2023/11/30 06:37:47 by hfafouri         ###   ########.fr       */
+/*   Created: 2023/11/28 17:30:33 by hfafouri          #+#    #+#             */
+/*   Updated: 2023/11/28 18:24:40 by hfafouri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_putnbr_u_rec(unsigned int n, int count)
 {
-	size_t	l;
+	if (n < 10)
+	{
+		ft_putchar(n + '0');
+		count++;
+	}
+	else
+	{
+		count = ft_putnbr_u_rec(n / 10, count);
+		count = ft_putnbr_u_rec(n % 10, count);
+	}
+	return (count);
+}
 
-	l = 0;
-	while (s[l])
-		l++;
-	return (l);
+int	ft_putnbr_u(unsigned int nb)
+{
+	int	count;
+
+	count = 0;
+	count = ft_putnbr_u_rec(nb, count);
+	return (count);
 }
